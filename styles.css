@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1E2A38; 
+    color: #E1EFFF;
+}
+
+#root {
+    background-color: #FFFFFF;
+    padding: 5px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 15px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); 
+}
+
+#drum-machine {
+    width: 900px;
+    height: 300px;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    background-color: #3a3f48;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: grid; 
+    grid-template-areas: 
+        "logo logo"
+        "pad controls"; 
+    grid-template-rows: 5% 80%; 
+    grid-template-columns: 70% 30%;
+    overflow: hidden;
+}
+
+.pad-bank {
+    grid-area: pad;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.drum-pad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%; 
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    margin: auto; 
+}
+
+.drum-pad:hover {
+    background-color: #63676d;
+}
+
+.drum-pad:active {
+    transform: scale(0.95);
+}
+
+#display {
+    margin: 10px auto;   
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #202327;
+    font-size: 20px;
+    text-align: center;
+    width: 80%;   
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+.logo {
+    position: absolute; 
+    top: 10px;          
+    right: 10px;        
+    display: flex;
+    align-items: center; 
+}
+
+.inner-logo {
+    font-family: 'Dancing Script', cursive; 
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+
+.fa-free-code-camp {
+    font-size: 24px;
+    color: #0a0;
+}
+
+.controls-container {
+    padding-top: 10%;
+    grid-area: controls;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.control p {
+    margin-bottom: 5px; 
+}
+
+
+.select {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #202327;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.inner {
+    width: 23px;
+    height: 23px;
+    background: white;
+    position: absolute;
+    top: 1px;
+    left: 2px;  
+    transition: left 0.3s ease;
+}
+
+
+.select .inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.select .inner:hover {
+    background-color: #eee;
+}
+
+.volume-slider {
+    width: 100%;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.volume-slider input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
